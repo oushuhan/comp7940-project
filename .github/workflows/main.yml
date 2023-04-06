@@ -40,8 +40,9 @@ jobs:
         password: ${{ secrets.PASSWORD }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         script: |
+          sudo docker pull seekthepath/chatbot:latest
           sudo docker stop chatbot || true
           sudo docker rm chatbot || true
-          sudo docker pull seekthepath/
+          sudo docker run -d --name chatbot seekthepath/chatbot:latest
 
 
