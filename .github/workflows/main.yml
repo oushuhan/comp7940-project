@@ -27,8 +27,7 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
 
     - name: Push Docker image
-      run: sudo docker push seekthepath/chatbot:latest
-
+      uses: docker/build-push-action@v2
 
     - name: SSH and Deploy
       uses: appleboy/ssh-action@master
