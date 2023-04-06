@@ -5,7 +5,6 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
-      
 
 jobs:
   deploy:
@@ -34,15 +33,15 @@ jobs:
         tags: seekthepath/chatbot:latest
 
     - name: SSH and Deploy
-      uses: appleboy/ssh-action@master
+      uses: appleboy/ssh-action@mastekr
       with:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         script: |
-          sudo -S docker stop chatbot || true
-          sudo -S docker rm chatbot || true
-          sudo -S docker pull seekthepath/
-        ssh_options: '-tt'
+          sudo docker stop chatbot || true
+          sudo docker rm chatbot || true
+          sudo docker pull seekthepath/
+
 
