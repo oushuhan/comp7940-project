@@ -28,6 +28,10 @@ jobs:
 
     - name: Push Docker image
       uses: docker/build-push-action@v2
+      with:
+        context: .
+        push: true
+        tags: seekthepath/chatbot:latest
 
     - name: SSH and Deploy
       uses: appleboy/ssh-action@master
@@ -36,7 +40,7 @@ jobs:
         username: ${{ secrets.USERNAME }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         script: |
-          sudo docker stop your-container-name || true
-          sudo docker rm your-container-name || true
-          sudo docker pull your-docker-username/
+          sudo docker stop chatbot || true
+          sudo docker rm chatbot || true
+          sudo docker pull seekthepath/
 
