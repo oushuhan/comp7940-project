@@ -41,7 +41,8 @@ jobs:
         password: ${{ secrets.PASSWORD }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         script: |
-          sudo docker stop chatbot || true
-          sudo docker rm chatbot || true
-          sudo docker pull seekthepath/
+          sudo -S docker stop chatbot || true
+          sudo -S docker rm chatbot || true
+          sudo -S docker pull seekthepath/
+        ssh_options: '-tt'
 
