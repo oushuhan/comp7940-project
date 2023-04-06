@@ -24,7 +24,7 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
 
     - name: Push Docker image
-      run: sudo docker push your-docker-username/chatbot:latest
+      run: sudo docker push 22408304@life.hkbu.edu.hk/chatbot:latest
 
 
     - name: SSH and Deploy
