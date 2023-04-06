@@ -27,7 +27,7 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
 
     - name: Push Docker image
-      run: sudo docker push seekthepath/chatbot:latest
+      run: sudo docker push seekthepath/chatbot:1.0.0
 
 
     - name: SSH and Deploy
